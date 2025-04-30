@@ -4,6 +4,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
+    data = {
+        'caption': "PopDjango"
+    }
     return render(request,'main/index.html')
 
 def new(request):
