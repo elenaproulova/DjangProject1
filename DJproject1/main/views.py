@@ -7,13 +7,13 @@ def index(request):
     data = {
         'caption': "PopDjango"
     }
-    return render(request,'main/index.html')
+    return render(request,'main/index.html', data)
 
 def new(request):
     return render(request,'main/new.html')
 
-#def data(request):
-#    return render(request,)
+def contact(request):
+    return render(request,'main/contact.html')
 
-#def test(request):
-#    return render(request, )
+def test(request):
+    return render(request, 'main/test.html' )
