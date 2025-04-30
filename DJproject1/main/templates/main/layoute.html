@@ -6,44 +6,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- Подключение Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    <!-- Ваш собственный CSS -->
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
-
     {% block title %}
     <title>PopDjango</title>
     {% endblock %}
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <aside class="col-md-3 bg-light sidebar p-4">
-                <img src="{% static 'main/img/logo_dj.jpg' %}" alt="Pop Art" class="img-fluid mb-3" width="150px">
-                <h2 class="h4">PopDjango</h2>
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'home' %}">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'page2' %}">Второстепенная</a>
-                    </li>
-                </ul>
-            </aside>
-            <main class="col-md-9 p-4">
-                {% block content %}
-                <h1>Добро пожаловать на сайт PopDjango</h1>
-                <p>Здесь вы можете найти множество интересных материалов.</p>
-                {% endblock %}
-            </main>
-        </div>
-    </div>
 
-    <!-- Подключение Bootstrap JS и зависимостей -->
+    {% include 'menu.html' %}
+
+    <main class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {% include 'footer.html' %}
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
